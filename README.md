@@ -17,12 +17,11 @@ Rscript ncbi_bacteria_ftps.R \
 ```
 Each file can be downloaded in parallel
 ```
-## then download each file
 ## I used gnu parallel https://www.gnu.org/software/parallel/
-## for the complete database
+# for the complete database
 mkdir -p database/all_seqs/fna
 parallel --progress --bar -j 8 --gnu wget -q -P database/all_seqs/fna < database/all_seqs.txt
-## for the representative database
+# for the representative database
 mkdir -p database/representative_seqs/fna
 parallel --progress --bar -j 8 --gnu wget -q -P database/representative_seqs/fna < database/representative_seqs.txt
 ```
